@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install nginx -y
 
 # Copy the contents of the 'src' directory to the Nginx HTML directory
 ADD src/ /var/www/html
+ADD ImageGallery/ /var/www/html
 
 # Expose port 80 to allow external access to the Nginx web server
 EXPOSE 80
