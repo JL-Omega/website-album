@@ -5,7 +5,7 @@ FROM ubuntu:22.04
 LABEL maintainer="Jean-Luc Mpande"
 
 # Update package lists, install Nginx, and create a 'data' directory
-RUN apt-get update && apt-get install nginx -y && mkdir /var/www/html/data
+RUN apt-get update && apt-get install nginx -y
 
 # Copy the contents of the 'src' directory to the Nginx HTML directory
 ADD src/ /var/www/html
