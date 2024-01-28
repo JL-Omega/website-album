@@ -20,9 +20,9 @@ pipeline{
                 script{
                     sh """
                         docker rm -f ${CONTAINER_NAME} || true
-                        docker run --name ${CONTAINER_NAME} -d -p 2500:80 -v Image-Gallery/:/ImageGallery ${IMAGE_NAME}:${IMAGE_TAG}
+                        docker run --name ${CONTAINER_NAME} -d -p 2500:80 -v ImageGallery/:/ImageGallery ${IMAGE_NAME}:${IMAGE_TAG}
                         sleep 10
-                        ls -l Image-Gallery
+                        ls -l ImageGallery
                         curl -s http://localhost:2500 | grep -o '<title>[^<]*</title>' | sed -e 's/<title>//g' -e 's/<\\/title>//g'
                     """
                 }
